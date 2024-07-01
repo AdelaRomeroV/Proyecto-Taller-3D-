@@ -38,14 +38,13 @@ public class ControladorTutorial : MonoBehaviour
     [SerializeField] EnemiesControllerTutorial enemigos;
     Mov movScript;
     Turbo turboScript;
-    [SerializeField] GameObject BarraDeEnergía;
+    [SerializeField] GameObject BarraDeEnergia;
 
     [Header("Objetivos por fase")]
     public int dialogo = 0;
 
     /*[NonSerialized]*/
-    public int movimientoBasico = 0; //Necesita llegar al valor de 3
-    [NonSerialized] public bool W_pressed;
+    public int movimientoBasico = 0; //Necesita llegar al valor de 2
     [NonSerialized] public bool A_pressed;
     [NonSerialized] public bool D_pressed;
 
@@ -55,8 +54,6 @@ public class ControladorTutorial : MonoBehaviour
     [SerializeField][Range(0, 100)] float TurboGoal;
 
     public int sideAttack = 0;
-    public bool Right_Pressed;
-    public bool Left_Pressed;
 
     [Header("Cambio de escena")]
     [SerializeField] string NombreDeEscena;
@@ -72,7 +69,7 @@ public class ControladorTutorial : MonoBehaviour
         movScript = Player.GetComponent<Mov>();
 
         turboScript.enabled = false;
-        BarraDeEnergía.SetActive(false);
+        BarraDeEnergia.SetActive(false);
     }
 
     private void Update()

@@ -20,7 +20,7 @@ public class Dialogo : MonoBehaviour
     [SerializeField] float typingTime = 0.02f;
     [Header("Cuadro de Texto")]
     [SerializeField] private GameObject dialoguePanel;
-    [SerializeField] private TMP_Text NormalDialogueText;
+    [SerializeField] private TMP_Text DialogueText;
     [SerializeField] private TMP_Text NameText;
     [SerializeField] private Image Imagen;
 
@@ -45,7 +45,7 @@ public class Dialogo : MonoBehaviour
         if (didDialogueStart)
         {
 
-            if (NormalDialogueText.text == dialogueLine[lineaIndex].line)
+            if (DialogueText.text == dialogueLine[lineaIndex].line)
             {
                 NextDialogueLine();
             }
@@ -106,11 +106,11 @@ public class Dialogo : MonoBehaviour
             Robotvoice.Play();
         }
 
-        NormalDialogueText.text = string.Empty;
+        DialogueText.text = string.Empty;
 
         foreach (char ch in dialogueLine[lineaIndex].line)
         {
-            NormalDialogueText.text += ch;
+            DialogueText.text += ch;
             yield return new WaitForSecondsRealtime(typingTime);
         }
     }
